@@ -1,27 +1,98 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.glassmorphism {
+  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Flex */
+.flex-center {
+  @apply flex justify-center items-center;
+}
+.flex-start {
+  @apply flex justify-start items-start;
+}
+.flex-end {
+  @apply flex justify-end items-center;
+}
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+/* Body Styles
+.body__styles {
+  @apply text-gray-800  duration-500 bg-gray-200 font-conthrax dark:bg-gray-700 dark:text-gray-300 selection:bg-blue-400 selection:text-fuchsia-500;
+} */
+body::-webkit-scrollbar {
+  width: 5px;
+}
+/* Animations */
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-slowspin {
+  animation: spin 10000ms linear infinite;
+}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.fade-bottom {
+  animation: fadeInBottom 800ms ease-in;
+}
+.fade-top {
+  animation: fadeInTop 800ms ease-in;
+}
+.fade-right {
+  animation: fadeInRight 800ms ease-in;
+}
+.fade-left {
+  animation: fadeInLeft 800ms ease-in;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
