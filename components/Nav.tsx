@@ -102,7 +102,7 @@ const Nav = () => {
       {/* Mobile Navigation */}
       <nav
         className={`lg:hidden md:hidden z-10 flex-center p-4 fixed bottom-0 left-0 w-full transition-transform duration-300 transform ${
-          !visible ? "translate-y-full" : "-translate-y-0"
+          visible ? "-translate-y-0" : "translate-y-full"
         }`}
       >
         <div className="flex rounded-full items-center justify-center p-3 px-5 shadow-md backdrop-blur-sm bg-gray-100/10 ">
