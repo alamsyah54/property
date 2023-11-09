@@ -83,9 +83,11 @@ const Nav = () => {
                   className=" rounded-2xl text-black text-3xl"
                   href={`/${nav.idSection}`}
                 >
-                  <div className="flex justify-center items-center">
+                  <div className="flex justify-center items-center text-primary">
                     {nav.mobileIcon}
-                    <p className="font-thin text-base px-1">{nav.title}</p>
+                    <p className="font-thin text-base px-1 text-black">
+                      {nav.title}
+                    </p>
                   </div>
                 </Link>
               </li>
