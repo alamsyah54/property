@@ -4,27 +4,41 @@ export default function Home() {
   return (
     <main className="flex-col flex items-center">
       <HeroSection />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
-      ASDKAODKAODKAODKAOKD <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </main>
   );
 }

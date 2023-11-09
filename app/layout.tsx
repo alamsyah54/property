@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Roboto_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
-const roboto_mono = Roboto_Mono({
+const roboto = Roboto({
   subsets: ["latin"],
   style: "normal",
   weight: "400",
@@ -20,7 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto_mono.className}>{children}</body>
+      <body
+        className={`${roboto.className} selection:text-white selection:bg-black`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

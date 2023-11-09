@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { BsSunFill, BsFillMoonStarsFill } from "react-icons/bs";
+
 import { RiBuilding2Fill } from "react-icons/ri";
 import { nav } from "@/constants/const";
 
@@ -30,30 +30,6 @@ const Nav = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPos]);
-
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      const storedTheme = localStorage.getItem("theme");
-      return storedTheme !== null ? storedTheme : "light";
-    }
-    return "light"; // Default theme for server-side rendering
-  });
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("theme", theme);
-    }
-  }, [theme]);
-
-  useEffect(() => {
-    document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
   return (
     <>
       {/* Desktop Navigation */}
@@ -69,8 +45,8 @@ const Nav = () => {
             href="/"
             className="flex items-center justify-center text-gray-800 px-5"
           >
-            <RiBuilding2Fill className="text-5xl mx-2 dark:text-gray-200 drop-shadow" />
-            <span className="dark:text-gray-200 font-bold drop-shadow text-2xl">
+            <RiBuilding2Fill className="text-5xl mx-2 drop-shadow text-primary" />
+            <span className="font-bold drop-shadow text-2xl text-primary">
               Property
             </span>
           </Link>
@@ -88,15 +64,6 @@ const Nav = () => {
                 </li>
               ))}
             </ul>
-            <div className="flex items-center lg:flex-center text-3xl lg:text-4xl md:text-xl">
-              <button
-                onClick={handleThemeSwitch}
-                className="relative items-center justify-center lg:p-2"
-              >
-                <BsSunFill className="absolute text-lg text-gray-800 opacity-0 dark:opacity-100 dark:text-gray-200 lg:text-xl" />
-                <BsFillMoonStarsFill className="text-lg text-gray-800 dark:opacity-0 dark:text-gray-200 lg:text-xl " />
-              </button>
-            </div>
           </div>
         </div>
       </nav>
@@ -108,26 +75,22 @@ const Nav = () => {
         }`}
       >
         <div className="flex rounded-full items-center justify-center py-2 px-2 shadow-md backdrop-blur-md bg-gray-100/30 border border-gray-300/50 ">
-          <ul className="flex font-semibold text-lg ">
+          <ul className="gap-1 flex items-center justify-center">
             {nav.map((nav) => (
-              <li className="py-1 group">
+              <li className="hover:bg-gray-300/40 rounded-full p-2 flex items-center justify-center">
                 <Link
                   key={nav.title}
-                  className="py-1 px-2 group-hover:bg-gray-300/60 rounded-2xl"
+                  className=" rounded-2xl text-black text-3xl"
                   href={`/${nav.idSection}`}
                 >
-                  {nav.title}
+                  <div className="flex justify-center items-center">
+                    {nav.mobileIcon}
+                    <p className="font-thin text-base px-1">{nav.title}</p>
+                  </div>
                 </Link>
               </li>
             ))}
           </ul>
-          <button
-            onClick={handleThemeSwitch}
-            className="duration-500 relative items-center justify-center rounded-full bg-gray-900 dark:bg-gray-200 ml-2 p-2 "
-          >
-            <BsSunFill className="absolute text-gray-100 dark:text-gray-900 opacity-0 dark:opacity-100" />
-            <BsFillMoonStarsFill className=" text-gray-100 dark:text-gray-900 dark:opacity-0 " />
-          </button>
         </div>
       </nav>
     </>
