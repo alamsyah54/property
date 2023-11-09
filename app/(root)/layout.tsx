@@ -1,4 +1,4 @@
-import Nav from "@/components/Nav";
+import Nav from "@/components/shared/Nav";
 import React from "react";
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
