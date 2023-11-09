@@ -107,13 +107,13 @@ const Nav = () => {
           visible ? "-translate-y-0" : "translate-y-full"
         }`}
       >
-        <div className="flex rounded-full items-center justify-center py-2 px-4 gap-3 shadow-md backdrop-blur-sm bg-gray-100/10 border border-gray-300/50 mb-5">
+        <div className="flex rounded-full items-center justify-center py-2 px-2 shadow-md backdrop-blur-sm bg-gray-100/10 border border-gray-300/50 mb-5">
           <ul className="flex font-semibold text-lg">
             {nav.map((nav) => (
               <li>
                 <Link
                   key={nav.title}
-                  className="py-3 px-2"
+                  className="py-3 px-4"
                   href={`/${nav.idSection}`}
                 >
                   {nav.title}
@@ -123,10 +123,10 @@ const Nav = () => {
           </ul>
           <button
             onClick={handleThemeSwitch}
-            className="relative items-center justify-center"
+            className="duration-500 relative items-center justify-center rounded-full bg-gray-900 dark:bg-gray-200 ml-3 p-2"
           >
-            <BsSunFill className="absolute  text-lg opacity-0 dark:opacity-100" />
-            <BsFillMoonStarsFill className=" text-lg dark:opacity-0 " />
+            <BsSunFill className="absolute text-gray-100 dark:text-gray-900 opacity-0 dark:opacity-100" />
+            <BsFillMoonStarsFill className=" text-gray-100 dark:text-gray-900 dark:opacity-0 " />
           </button>
         </div>
       </nav>
