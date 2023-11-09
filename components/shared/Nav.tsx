@@ -107,8 +107,8 @@ const Nav = () => {
           visible ? "-translate-y-0" : "translate-y-full"
         }`}
       >
-        <div className="flex rounded-full items-center justify-center py-4 px-6 gap-3 shadow-md backdrop-blur-sm bg-gray-100/10 border border-gray-300/50">
-          <ul className="flex text-lg font-semibold gap-1">
+        <div className="flex rounded-full items-center justify-center py-2 px-4 gap-3 shadow-md backdrop-blur-sm bg-gray-100/10 border border-gray-300/50">
+          <ul className="flex font-semibold gap-1">
             {nav.map((nav) => (
               <li>
                 <Link
@@ -125,8 +125,8 @@ const Nav = () => {
             onClick={handleThemeSwitch}
             className="relative items-center justify-center"
           >
-            <BsSunFill className="absolute  text-xl opacity-0 dark:opacity-100" />
-            <BsFillMoonStarsFill className=" text-xl dark:opacity-0 " />
+            <BsSunFill className="absolute  text-lg opacity-0 dark:opacity-100" />
+            <BsFillMoonStarsFill className=" text-lg dark:opacity-0 " />
           </button>
         </div>
       </nav>
