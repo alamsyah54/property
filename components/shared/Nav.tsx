@@ -107,13 +107,13 @@ const Nav = () => {
           visible ? "-translate-y-0" : "translate-y-full"
         }`}
       >
-        <div className="flex rounded-full items-center justify-center py-2 px-4 gap-3 shadow-md backdrop-blur-sm bg-gray-100/10 border border-gray-300/50">
-          <ul className="flex font-semibold gap-1">
+        <div className="flex rounded-full items-center justify-center py-2 px-4 gap-3 shadow-md backdrop-blur-sm bg-gray-100/10 border border-gray-300/50 mb-5">
+          <ul className="flex font-semibold text-lg">
             {nav.map((nav) => (
               <li>
                 <Link
                   key={nav.title}
-                  className="p-3"
+                  className="py-3 px-2"
                   href={`/${nav.idSection}`}
                 >
                   {nav.title}
