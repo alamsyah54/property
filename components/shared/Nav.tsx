@@ -62,7 +62,7 @@ const Nav = () => {
           visible
             ? "translate-y-0 border-b border-gray-300/20"
             : "-translate-y-full"
-        } bg-gray-50/10 backdrop-blur-sm shadow-md shadow-gray-500/10 z-10`}
+        } bg-gray-50/30 backdrop-blur-sm shadow-md shadow-gray-500/10 z-10`}
       >
         <div className="flex items-center justify-center lg:justify-evenly md:justify-evenly ">
           <Link
@@ -103,17 +103,17 @@ const Nav = () => {
 
       {/* Mobile Navigation */}
       <nav
-        className={`lg:hidden md:hidden z-10 flex-center p-4 max-sm:fixed bottom-0 left-0 w-full transition-transform duration-500 transform ${
+        className={`lg:hidden md:hidden z-10 flex justify-evenly max-sm:fixed bottom-0 left-0 w-full transition-transform duration-500 transform mb-5 ${
           visible ? "-translate-y-0" : "translate-y-full"
         }`}
       >
-        <div className="flex rounded-full items-center justify-center py-2 px-2 shadow-md backdrop-blur-sm bg-gray-100/10 border border-gray-300/50 mb-5">
-          <ul className="flex font-semibold text-lg">
+        <div className="flex rounded-full items-center justify-center py-2 px-2 shadow-md backdrop-blur-md bg-gray-100/30 border border-gray-300/50 ">
+          <ul className="flex font-semibold text-lg ">
             {nav.map((nav) => (
-              <li>
+              <li className="py-1 group">
                 <Link
                   key={nav.title}
-                  className="py-3 px-4"
+                  className="py-1 px-2 group-hover:bg-gray-300/60 rounded-2xl"
                   href={`/${nav.idSection}`}
                 >
                   {nav.title}
@@ -123,7 +123,7 @@ const Nav = () => {
           </ul>
           <button
             onClick={handleThemeSwitch}
-            className="duration-500 relative items-center justify-center rounded-full bg-gray-900 dark:bg-gray-200 ml-3 p-2"
+            className="duration-500 relative items-center justify-center rounded-full bg-gray-900 dark:bg-gray-200 ml-2 p-2 "
           >
             <BsSunFill className="absolute text-gray-100 dark:text-gray-900 opacity-0 dark:opacity-100" />
             <BsFillMoonStarsFill className=" text-gray-100 dark:text-gray-900 dark:opacity-0 " />
