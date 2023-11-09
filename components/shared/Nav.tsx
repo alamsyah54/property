@@ -62,9 +62,9 @@ const Nav = () => {
           visible
             ? "translate-y-0 border-b border-gray-300/20"
             : "-translate-y-full"
-        } bg-gray-100/10 backdrop-blur-sm shadow-md shadow-gray-700/10 z-10`}
+        } bg-gray-50/10 backdrop-blur-sm shadow-md shadow-gray-500/10 z-10`}
       >
-        <div className="flex items-center justify-center  lg:justify-evenly md:justify-evenly ">
+        <div className="flex items-center justify-center lg:justify-evenly md:justify-evenly ">
           <Link
             href="/"
             className="flex items-center justify-center text-gray-800 px-5"
@@ -77,10 +77,10 @@ const Nav = () => {
           <div className="flex-between lg:gap-10 gap-7  items-center px-5 ">
             <ul className="flex gap-10 font-bold">
               {nav.map((nav) => (
-                <li className="group p-4 ">
+                <li className="group py-2">
                   <Link
                     key={nav.title}
-                    className="group-hover:drop-shadow-lg"
+                    className="group-hover:bg-gray-300/60 py-2 px-3 rounded-2xl"
                     href={`/${nav.idSection}`}
                   >
                     {nav.title}

@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 .glassmorphism {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  @apply rounded-xl border border-gray-200/80 bg-white/5 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur-sm p-3;
 }
 
 /* Flex */
@@ -21,13 +21,6 @@
   @apply flex justify-between items-center;
 }
 
-/* Body Styles
-.body__styles {
-  @apply text-gray-800  duration-500 bg-gray-200 font-conthrax dark:bg-gray-700 dark:text-gray-300 selection:bg-blue-400 selection:text-fuchsia-500;
-} */
-body::-webkit-scrollbar {
-  width: 5px;
-}
 /* Animations */
 @keyframes fadeInBottom {
   0% {

@@ -4,7 +4,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="bg-white dark:bg-black relative text-gray-900 dark:text-gray-100 duration-500">
       <Nav />
-      <div className="flex-center">{children}</div>
+      <div>{children}</div>
     </main>
   );
 };
