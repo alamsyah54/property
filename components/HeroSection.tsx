@@ -17,19 +17,19 @@ const HeroSection = () => {
   return (
     <AnimatePresence mode="wait">
       <section id="hero" className="duration-500 w-full">
-        <div className="hidden lg:flex max-w-screen max-sm:flex-col h-screen min-w-full lg:pt-[75px]">
-          <div className="w-full p-10">
+        <div className="hidden lg:flex max-w-screen max-sm:flex-col h-screen min-w-full">
+          <div className="w-full">
             <div className="w-full h-full flex flex-center">
-              <div className="flex gap-10 w-full h-full">
-                <div className="flex flex-col h-full px-3 w-full justify-center rounded-3xl gap-10">
+              <div className="flex w-full h-full">
+                <div className="flex flex-col h-full w-full justify-center">
                   <motion.div
                     initial={{ opacity: 0, y: -50 }}
                     transition={{
-                      duration: 0.5,
+                      duration: 1,
                     }}
                     whileInView={{ opacity: 1, x: 0, y: 0 }}
                     viewport={{ once: false }}
-                    className="h-[65%] rounded-3xl flex shadow-black/25 shadow-lg bg-gray-500 p-5 bg-no-repeat bg-cover bg-center border-[1.5px] "
+                    className="h-[65%] flex bg-gray-500 p-5 bg-no-repeat bg-cover bg-center"
                     style={{
                       background:
                         "url(https://static.wixstatic.com/media/ad9f2a_0e940ad80f1d473c97c6a5c27e266363~mv2.jpg/v1/fit/w_1204,h_793,q_90/ad9f2a_0e940ad80f1d473c97c6a5c27e266363~mv2.webp)",
@@ -40,11 +40,11 @@ const HeroSection = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     transition={{
-                      duration: 0.9,
+                      duration: 2.4,
                     }}
                     whileInView={{ opacity: 1, x: 0, y: 0 }}
                     viewport={{ once: false }}
-                    className="h-full rounded-3xl flex shadow-black/25 shadow-lg p-5 bg-no-repeat bg-cover bg-center border-[1.5px] "
+                    className="h-full flex p-5 bg-no-repeat bg-cover bg-center"
                     style={{
                       background:
                         "url(https://static.wixstatic.com/media/ad9f2a_ba1a0325754c4a5c980e966fe37e5558~mv2.jpg/v1/fit/w_1204,h_793,q_90/ad9f2a_ba1a0325754c4a5c980e966fe37e5558~mv2.webp)",
@@ -56,11 +56,18 @@ const HeroSection = () => {
                       <motion.div
                         initial={{ opacity: 0, x: -70 }}
                         transition={{
-                          duration: 1.5,
+                          duration: 1.6,
                         }}
                         whileInView={{ opacity: 1, y: 0, x: 0 }}
                         viewport={{ once: false }}
-                        className={`border-2 !rounded-3xl px-3 py-1 !bg-white/60 shadow-black/70  drop-shadow-md  glassmorphism`}
+                        drag
+                        dragConstraints={{
+                          top: -50,
+                          left: -50,
+                          right: 50,
+                          bottom: 50,
+                        }}
+                        className={`border-2 !rounded-3xl px-3 py-1 !bg-white/60 glassmorphism`}
                       >
                         <h1
                           className={`${roboto_black.className} p-3 text-primary text-5xl`}
@@ -82,11 +89,11 @@ const HeroSection = () => {
                 <motion.div
                   initial={{ opacity: 0, x: 100 }}
                   transition={{
-                    duration: 0.7,
+                    duration: 1.7,
                   }}
                   whileInView={{ opacity: 1, x: 0, y: 0 }}
                   viewport={{ once: false }}
-                  className="lg:w-[45%] rounded-3xl flex shadow-black/25 shadow-lg bg-gray-500 overflow-hidden p-5 bg-no-repeat bg-cover bg-center border-[1.5px] dark:border-white"
+                  className="lg:w-[45%] flex bg-gray-500 overflow-hidden p-5 bg-no-repeat bg-cover bg-center "
                   style={{
                     background:
                       "url(https://static.wixstatic.com/media/ad9f2a_ed900a78033247f3845cdc7fe4904768~mv2.jpg/v1/fit/w_1120,h_793,q_90/ad9f2a_ed900a78033247f3845cdc7fe4904768~mv2.webp)",
@@ -94,7 +101,7 @@ const HeroSection = () => {
                     backgroundPosition: "center center",
                   }}
                 >
-                  <div className="font-light ">
+                  <div className="font-light pt-16">
                     <motion.h1
                       className="px-3 py-2 my-2 text-md flex items-center bg-white/50 rounded-2xl hover:bg-white/80"
                       initial={{ opacity: 0, y: 50 }}
