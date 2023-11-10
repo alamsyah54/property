@@ -4,12 +4,13 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 import { RiBuilding2Fill } from "react-icons/ri";
-import { nav } from "@/constants/const";
+import { nav } from "@/constants";
+
+import { motion } from "framer-motion";
 
 const Nav = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
     const isScrollingDown = prevScrollPos < currentScrollPos;
@@ -56,8 +57,8 @@ const Nav = () => {
                 <li className="group py-2">
                   <Link
                     key={nav.title}
-                    className="group-hover:bg-gray-300/60 py-2 px-3 rounded-2xl"
-                    href={`/${nav.idSection}`}
+                    className="py-2 px-3 hover:bg-gray-300/40 rounded-full"
+                    href={nav.href}
                   >
                     {nav.title}
                   </Link>
@@ -70,18 +71,18 @@ const Nav = () => {
 
       {/* Mobile Navigation */}
       <nav
-        className={`lg:hidden md:hidden z-10 flex justify-evenly max-sm:fixed bottom-0 left-0 w-full transition-transform duration-500 transform mb-5 ${
+        className={`lg:hidden md:hidden z-10 flex justify-evenly max-sm:fixed bottom-0 left-0 w-full transition-transform duration-500 transform ${
           visible ? "-translate-y-0" : "translate-y-full"
         }`}
       >
-        <div className="flex rounded-full items-center justify-center py-2 px-2 shadow-md backdrop-blur-md bg-gray-100/30 border border-gray-300/50 ">
+        <div className="flex rounded-full items-center justify-center py-2 px-2 shadow-md backdrop-blur-md bg-gray-100/30 border border-gray-300/50 mb-5">
           <ul className="gap-1 flex items-center justify-center">
             {nav.map((nav) => (
               <li className="hover:bg-gray-300/40 rounded-full p-2 flex items-center justify-center">
                 <Link
                   key={nav.title}
                   className=" rounded-2xl text-black text-3xl"
-                  href={`/${nav.idSection}`}
+                  href={`/${nav.href}`}
                 >
                   <div className="flex justify-center items-center text-primary">
                     {nav.mobileIcon}

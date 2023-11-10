@@ -6,22 +6,22 @@ import { LuContact } from "react-icons/lu";
 export const nav = [
   {
     title: "Home",
-    idSection: "#home",
+    href: "/#home",
     mobileIcon: <GoHome />,
   },
   {
     title: "Sales",
-    idSection: "#sales",
+    href: "/#sales",
     mobileIcon: <MdOutlineSell />,
   },
   {
     title: "About",
-    idSection: "#about",
+    href: "/#about",
     mobileIcon: <PiInfoBold />,
   },
   {
     title: "Contact",
-    idSection: "#contact",
+    href: "/#contact",
     mobileIcon: <LuContact />,
   },
 ];

@@ -1,44 +1,15 @@
+import AboutSection from "@/components/AboutSection";
+import ContactSection from "@/components/ContactSection";
 import HeroSection from "@/components/HeroSection";
+import SalesSection from "@/components/SalesSection";
 
 export default function Home() {
   return (
     <main className="flex-col flex items-center">
       <HeroSection />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <SalesSection />
+      <AboutSection />
+      <ContactSection />
     </main>
   );
 }
