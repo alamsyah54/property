@@ -22,7 +22,13 @@ const HeroSection = () => {
             <div className="w-full h-full flex flex-center">
               <div className="flex gap-10 w-full h-full">
                 <div className="flex flex-col h-full px-3 w-full justify-center rounded-3xl gap-10">
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0, y: -50 }}
+                    transition={{
+                      duration: 0.5,
+                    }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    viewport={{ once: false }}
                     className="h-[65%] rounded-3xl flex shadow-black/25 shadow-lg bg-gray-500 p-5 bg-no-repeat bg-cover bg-center border-[1.5px] "
                     style={{
                       background:
@@ -31,7 +37,13 @@ const HeroSection = () => {
                       backgroundPosition: "bottom center",
                     }}
                   />
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    transition={{
+                      duration: 0.9,
+                    }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    viewport={{ once: false }}
                     className="h-full rounded-3xl flex shadow-black/25 shadow-lg p-5 bg-no-repeat bg-cover bg-center border-[1.5px] "
                     style={{
                       background:
@@ -42,11 +54,11 @@ const HeroSection = () => {
                   >
                     <div className="relative left-0 w-fit max-md:hidden max-sm:hidden -mt-[130px] ">
                       <motion.div
-                        initial={{ opacity: 0, y: 50 }}
+                        initial={{ opacity: 0, x: -70 }}
                         transition={{
-                          duration: 1,
+                          duration: 1.5,
                         }}
-                        whileInView={{ opacity: 1, y: -50 }}
+                        whileInView={{ opacity: 1, y: 0, x: 0 }}
                         viewport={{ once: false }}
                         className={`border-2 !rounded-3xl px-3 py-1 !bg-white/60 shadow-black/70  drop-shadow-md  glassmorphism`}
                       >
@@ -65,9 +77,15 @@ const HeroSection = () => {
                         </p>
                       </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
-                <div
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  transition={{
+                    duration: 0.7,
+                  }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  viewport={{ once: false }}
                   className="lg:w-[45%] rounded-3xl flex shadow-black/25 shadow-lg bg-gray-500 overflow-hidden p-5 bg-no-repeat bg-cover bg-center border-[1.5px] dark:border-white"
                   style={{
                     background:
@@ -123,7 +141,7 @@ const HeroSection = () => {
                       </p>
                     </motion.h1>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
