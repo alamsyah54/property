@@ -42,8 +42,11 @@ const HeroSection = () => {
                   >
                     <div className="relative left-0 w-fit max-md:hidden max-sm:hidden -mt-[130px] ">
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
+                        initial={{ opacity: 0, y: 50 }}
+                        transition={{
+                          duration: 1,
+                        }}
+                        whileInView={{ opacity: 1, y: -50 }}
                         viewport={{ once: false }}
                         className={`border-2 !rounded-3xl px-3 py-1 !bg-white/60 shadow-black/70  drop-shadow-md  glassmorphism`}
                       >
@@ -74,27 +77,51 @@ const HeroSection = () => {
                   }}
                 >
                   <div className="font-light ">
-                    <h1 className="px-3 py-2 my-2 text-md flex items-center bg-white/50 rounded-2xl hover:bg-white/80">
+                    <motion.h1
+                      className="px-3 py-2 my-2 text-md flex items-center bg-white/50 rounded-2xl hover:bg-white/80"
+                      initial={{ opacity: 0, y: 50 }}
+                      transition={{
+                        duration: 1.5,
+                      }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: false }}
+                    >
                       <PiNoteLight className="text-4xl mr-2 text-tertiary" />
                       <p className="text-black">
                         Free Registration
                         <br /> No Hidden Fees
                       </p>
-                    </h1>
-                    <h1 className="px-3 py-2 my-2 text-md flex items-center bg-white/50 rounded-2xl hover:bg-white/80">
+                    </motion.h1>
+                    <motion.h1
+                      className="px-3 py-2 my-2 text-md flex items-center bg-white/50 rounded-2xl hover:bg-white/80"
+                      initial={{ opacity: 0, y: 60 }}
+                      transition={{
+                        duration: 2.3,
+                      }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: false }}
+                    >
                       <FiLayers className="text-4xl mr-2 text-tertiary" />
                       <p className="text-black">
                         Property Apparaisal
                         <br /> Free Of Charge
                       </p>
-                    </h1>
-                    <h1 className="px-3 py-2 my-2 text-md flex items-center bg-white/50 rounded-2xl hover:bg-white/80">
+                    </motion.h1>
+                    <motion.h1
+                      className="px-3 py-2 my-2 text-md flex items-center bg-white/50 rounded-2xl hover:bg-white/80"
+                      initial={{ opacity: 0, y: 70 }}
+                      transition={{
+                        duration: 3.2,
+                      }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: false }}
+                    >
                       <BiMapPin className="text-4xl mr-2 text-tertiary" />
                       <p className="text-black">
                         Large Coverage
                         <br /> Offices In 2 Locations
                       </p>
-                    </h1>
+                    </motion.h1>
                   </div>
                 </div>
               </div>
