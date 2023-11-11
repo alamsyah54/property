@@ -1,53 +1,43 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
-
 import { RiBuilding2Fill } from "react-icons/ri";
 import { nav } from "@/constants";
 
-import { motion } from "framer-motion";
-
 const Nav = () => {
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-    const isScrollingDown = prevScrollPos < currentScrollPos;
+  // const [prevScrollPos, setPrevScrollPos] = useState(0);
+  // const [visible, setVisible] = useState(true);
+  // const handleScroll = () => {
+  //   const currentScrollPos = window.pageYOffset;
+  //   const isScrollingDown = prevScrollPos < currentScrollPos;
 
-    if (currentScrollPos <= 0) {
-      // If at the top of the page, make the navbar always visible
-      setVisible(true);
-    } else {
-      setVisible(isScrollingDown);
-    }
+  //   if (currentScrollPos <= 0) {
+  //     // If at the top of the page, make the navbar always visible
+  //     setVisible(true);
+  //   } else {
+  //     setVisible(isScrollingDown);
+  //   }
 
-    setPrevScrollPos(currentScrollPos);
-  };
+  //   setPrevScrollPos(currentScrollPos);
+  // };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollPos]);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [prevScrollPos]);
   return (
     <>
       {/* Desktop Navigation */}
-      <nav
-        className={`max-sm:hidden fixed top-0 left-0 w-full p-3 transition-transform duration-500 transform  ${
-          visible
-            ? "translate-y-0 border-b border-gray-300/20"
-            : "-translate-y-full"
-        } bg-gray-50/30 backdrop-blur-sm shadow-md shadow-gray-500/10 z-10`}
-      >
+      <nav className="hidden lg:block md:block top-0 fixed left-0 w-full p-3 border-b border-white/70 bg-white/50 backdrop-blur-sm shadow-md shadow-gray-500/10 z-10">
         <div className="flex items-center justify-center lg:justify-evenly md:justify-evenly ">
           <Link
             href="/"
             className="flex items-center justify-center text-gray-800 px-5"
           >
-            <RiBuilding2Fill className="text-5xl mx-2 drop-shadow text-primary" />
-            <span className="font-bold drop-shadow text-2xl text-primary">
+            <RiBuilding2Fill className="text-4xl mx-2 drop-shadow text-secondary" />
+            <span className="font-bold drop-shadow text-xl text-secondary">
               Property
             </span>
           </Link>
@@ -57,7 +47,7 @@ const Nav = () => {
                 <li className="group py-2">
                   <Link
                     key={nav.title}
-                    className="py-2 px-3 hover:bg-gray-300/40 rounded-full"
+                    className="py-2 px-2 hover:bg-gray-300/40 rounded-full"
                     href={nav.href}
                   >
                     {nav.title}
@@ -70,19 +60,15 @@ const Nav = () => {
       </nav>
 
       {/* Mobile Navigation */}
-      <nav
-        className={`lg:hidden md:hidden z-10 flex justify-evenly max-sm:fixed bottom-0 left-0 w-full transition-transform duration-500 transform ${
-          visible ? "-translate-y-0" : "translate-y-full"
-        }`}
-      >
-        <div className="flex rounded-full items-center justify-center py-2 px-2 shadow-md backdrop-blur-md bg-gray-100/30 border border-gray-300/50 mb-5">
-          <ul className="gap-1 flex items-center justify-center">
+      <nav className="lg:hidden md:hidden z-10 flex justify-evenly fixed bottom-0 left-0 w-full">
+        <div className="flex items-center justify-center backdrop-blur-sm bg-white/20 border border-white/70 mb-5 ">
+          <ul className="gap-2 px-2 py-1 flex items-center justify-center">
             {nav.map((nav) => (
-              <li className="hover:bg-gray-300/40 rounded-full p-2 flex items-center justify-center">
+              <li className="hover:text-primary font-black flex items-center justify-center">
                 <Link
                   key={nav.title}
-                  className=" rounded-2xl text-black text-3xl"
-                  href={`/${nav.href}`}
+                  className=" text-black text-3xl hover:bg-white/40 rounded-full p-1"
+                  href={`${nav.href}`}
                 >
                   <div className="flex justify-center items-center text-primary">
                     {nav.mobileIcon}

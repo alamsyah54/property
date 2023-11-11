@@ -11,6 +11,7 @@
     "push": "npx prettier . --write && git push"
   },
   "dependencies": {
+    "@material-tailwind/react": "^2.1.4",
     "framer-motion": "^10.16.4",
     "next": "14.0.1",
     "react": "^18",

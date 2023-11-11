@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
-
-const config: Config = {
+const withMT = require("@material-tailwind/react/utils/withMT");
+const config: Config = withMT({
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        anjir: ["Aguafina Script", "cursive"],
+        sarabun: ["Sarabun", "sans-serif"],
       },
       colors: {
         primary: "#AD881E",
@@ -18,6 +18,22 @@ const config: Config = {
         tertiary: "#B69121",
       },
     },
+    screens: {
+      sm: "640px",
+      // => @media (min-width: 640px) { ... }
+
+      md: "768px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      xl: "1280px",
+      // => @media (min-width: 1280px) { ... }
+
+      "2xl": "1536px",
+      // => @media (min-width: 1536px) { ... }
+    },
   },
-};
+});
 export default config;

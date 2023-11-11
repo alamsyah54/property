@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${roboto.className} selection:text-white selection:bg-black `}
+        className={`${roboto.className} selection:text-white selection:bg-black selection:font-black`}
       >
         {children}
       </body>
