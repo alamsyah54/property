@@ -5,6 +5,8 @@ import { FiLayers } from "react-icons/fi";
 import { BiMapPin } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
 import Carousel from "./shared/HomeCarousel";
+import { RiBuilding2Fill } from "react-icons/ri";
+import Link from "next/link";
 
 // https://coolors.co/palette/ffe169-fad643-edc531-dbb42c-c9a227-b69121-ad881e-a47e1b-926c15-805b10
 // https://coolors.co/palette/ffe169-fad643-edc531-dbb42c-b69121-a47e1b-926c15
@@ -86,7 +88,7 @@ export default function HeroSection() {
               {/* lg Screen  End*/}
 
               {/* md Screen  Start*/}
-              <div className="md:flex lg:hidden flex-col h-full w-full justify-center">
+              <div className="md:flex lg:hidden h-full w-full justify-center">
                 <motion.div
                   initial={{ opacity: 0, x: 80 }}
                   transition={{
@@ -94,9 +96,77 @@ export default function HeroSection() {
                   }}
                   whileInView={{ opacity: 1, x: 0, y: 0 }}
                   viewport={{ once: false }}
-                  className="h-full flex bg-no-repeat bg-cover bg-center"
+                  className="flex bg-no-repeat bg-cover bg-center h-[60%] w-full"
                 >
-                  <Carousel />
+                  <div
+                    className="w-full h-full flex flex-col justify-between"
+                    style={{
+                      backgroundImage:
+                        "url(https://static.wixstatic.com/media/ad9f2a_0e940ad80f1d473c97c6a5c27e266363~mv2.jpg/v1/fit/w_1204,h_793,q_90/ad9f2a_0e940ad80f1d473c97c6a5c27e266363~mv2.webp)",
+                      backgroundSize: "cover",
+                      backgroundPosition: "bottom center",
+                    }}
+                  >
+                    <div className="bg-transparent bg-gradient-to-br from-white/30 from-0.5% w-full h-full ">
+                      <Link
+                        href="/"
+                        className="lg:hidden md:hidden flex items-end p-5"
+                      >
+                        <RiBuilding2Fill className="text-4xl mx-2 drop-shadow text-primary" />
+                        <span className=" drop-shadow text-2xl text-primary">
+                          Property
+                        </span>
+                      </Link>
+                    </div>
+
+                    <div className="font-light w-fit flex flex-col gap-3 px-2 py-3">
+                      <motion.h1
+                        className="p-2 text-md flex cursor-pointer items-center bg-white/80 rounded-2xl hover:bg-white/90"
+                        initial={{ opacity: 0, y: 50 }}
+                        transition={{
+                          duration: 1.5,
+                        }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                      >
+                        <PiNoteLight className="text-2xl mr-2 text-tertiary" />
+                        <p className="text-black text-sm">
+                          Free Registration
+                          <br /> No Hidden Fees
+                        </p>
+                      </motion.h1>
+                      <motion.h1
+                        className="p-2 text-md flex cursor-pointer items-center bg-white/80 rounded-2xl hover:bg-white/90"
+                        initial={{ opacity: 0, y: 60 }}
+                        transition={{
+                          duration: 2.3,
+                        }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                      >
+                        <FiLayers className="text-2xl mr-2 text-tertiary" />
+                        <p className="text-black text-sm">
+                          Property Apparaisal
+                          <br /> Free Of Charge
+                        </p>
+                      </motion.h1>
+                      <motion.h1
+                        className="p-2 text-md flex cursor-pointer items-center bg-white/80 rounded-2xl hover:bg-white/90"
+                        initial={{ opacity: 0, y: 70 }}
+                        transition={{
+                          duration: 3.2,
+                        }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                      >
+                        <BiMapPin className="text-2xl mr-2 text-tertiary" />
+                        <p className="text-black text-sm">
+                          Large Coverage
+                          <br /> Offices In 2 Locations
+                        </p>
+                      </motion.h1>
+                    </div>
+                  </div>
                 </motion.div>
               </div>
               {/* md Screen  End*/}

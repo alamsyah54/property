@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { RxDotFilled } from "react-icons/rx";
 import { urlSlidePictures } from "@/constants";
 
 function Carousel() {
@@ -24,36 +25,25 @@ function Carousel() {
   };
 
   return (
-    <div className="h-80 w-full m-auto relative group">
-      <div
-        style={{
-          backgroundImage: `url(${urlSlidePictures[currentIndex].url})`,
-        }}
-        className="w-full flex h-full bg-center bg-cover duration-500"
-      >
-        <div className="w-full hidden group-hover:flex justify-between">
-          <div className="bg-white/25 text-white h-full flex items-center">
-            <BsChevronCompactLeft
-              onClick={prevSlide}
-              size={30}
-              className="h-full mx-4"
-            />
-          </div>
-          <div className="bg-white/25 text-white h-full flex items-center">
-            <BsChevronCompactRight
-              onClick={nextSlide}
-              size={30}
-              className="h-full mx-4"
-            />
-          </div>
-        </div>
-      </div>
+    <div className="w-full relative group">
+      <img
+        className="min-h-fit h-80 w-full bg-center bg-cover duration-500 transition-transform"
+        src={urlSlidePictures[currentIndex].url}
+      />
+      {/* Left Arrow */}
+      {/* <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        <BsChevronCompactLeft onClick={prevSlide} size={30} />
+      </div> */}
+      {/* Right Arrow */}
+      {/* <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        <BsChevronCompactRight onClick={nextSlide} size={30} />
+      </div> */}
       <div className="flex justify-center -mt-5">
         {urlSlidePictures.map((slide, slideIndex) => (
           <div
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
-            className="px-2.5 py-[3px] group-hover:bg-white/70 mx-3"
+            className="px-3 py-1 bg-white/50 rounded-full mx-3"
           />
         ))}
       </div>

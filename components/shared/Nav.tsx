@@ -61,13 +61,13 @@ const Nav = () => {
 
       {/* Mobile Navigation */}
       <nav className="lg:hidden md:hidden z-10 flex justify-evenly fixed bottom-0 left-0 w-full">
-        <div className="flex items-center justify-center backdrop-blur-sm bg-white/20 border border-white/70 mb-5 ">
-          <ul className="gap-2 px-2 py-1 flex items-center justify-center">
+        <div className="flex items-center justify-center backdrop-blur-sm bg-white/30 border border-white/70 mb-5 ">
+          <ul className="gap-2 flex items-center justify-center">
             {nav.map((nav) => (
               <li className="hover:text-primary font-black flex items-center justify-center">
                 <Link
                   key={nav.title}
-                  className=" text-black text-3xl hover:bg-white/40 rounded-full p-1"
+                  className=" text-black text-3xl hover:bg-white/50 p-2"
                   href={`${nav.href}`}
                 >
                   <div className="flex justify-center items-center text-primary">
