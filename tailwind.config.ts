@@ -15,7 +15,7 @@ const config: Config = withMT({
       colors: {
         primary: "#AD881E",
         secondary: "#C9A227",
-        tertiary: "#B69121",
+        tertiary: "#b21e35",
       },
     },
     screens: {
