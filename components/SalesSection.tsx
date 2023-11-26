@@ -13,32 +13,27 @@ const SalesSection = () => {
         >
             <h1 className='text-3xl font-extrabold mb-10'>PROPERTIES</h1>
             {properties.map((property) => (
-                <div className='flex flex-col lg:flex-row items-start justify-center w-full my-10 lg:gap-10'>
-                    <div className='flex flex-col items-center w-full overflow-hidden h-fit group '>
-                        <div className='relative group-hover:scale-105 duration-500'>
+                <div className='flex flex-col lg:flex-row items-start justify-center w-full my-16 mb lg:gap-10 max-h-full'>
+                    <div className='flex flex-col items-start w-full overflow-hidden h-fit group'>
+                        <div className='relative group-hover:scale-105 duration-500 '>
                             <Image
                                 src={property.thumbnail}
                                 alt='Tumbnail'
                                 width={1000}
                                 height={1000}
-                                className='w-full h-full lg:h-[750px]'
+                                className='w-full h-full'
                             />
                             <Link
                                 href='/asd'
-                                className='absolute top-0 left-0 w-full h-full bg-white/5 backdrop-blur-sm opacity-0 group-hover:opacity-100 duration-1000 flex justify-center items-center'
+                                className='absolute top-0 cursor-zoom-in left-0 w-full h-full bg-white/5 backdrop-blur-sm opacity-0 group-hover:opacity-100 duration-1000 flex justify-center items-center'
                             >
-                                <div className='px-3 py-1 bg-white shadow-lg shadow-black/50'>
+                                <div className='px-3 py-1 cursor-pointer bg-white shadow-lg shadow-black/50'>
                                     See More
                                 </div>
                             </Link>
                         </div>
-                        <div className='w-full'>
-                            <p className='mt-5 font-medium'>
-                                {property.location}
-                            </p>
-                        </div>
                     </div>
-                    <div className='flex flex-col items-start justify-between w-full mt-5'>
+                    <div className='flex flex-col items-start justify-between w-full mt-5 lg:m-0'>
                         <div className='flex lg:flex-col gap-1 justify-between lg:items-start w-full mb-3 md:mb-6 '>
                             <h2 className='text-3xl font-black'>
                                 {property.name}
@@ -47,7 +42,7 @@ const SalesSection = () => {
                                 <h3 className='text-2xl font-bold italic lg:mb-2'>
                                     ฿{property.price}
                                 </h3>
-                                <Available />
+                                <Available available={property.available} />
                             </div>
                         </div>
                         <div className='flex flex-col items-start gap-2 pr-5'>
@@ -60,6 +55,25 @@ const SalesSection = () => {
                             >
                                 View Details
                             </Link>
+                            <div className='hidden lg:grid lg:grid-cols-2 w-full'>
+                                {property.pictures
+                                    .slice(0, 4)
+                                    .map((picture, i) => (
+                                        <div
+                                            key={i}
+                                            className='overflow-hidden group h-full w-full'
+                                        >
+                                            <Image
+                                                src={picture}
+                                                alt='Tumbnail'
+                                                width={1000}
+                                                height={1000}
+                                                className='w-full max-h-[300px] min-h-full duration-700 group-hover:scale-105 bg-cover bg-center bg-no-repeat'
+                                            />
+                                        </div>
+                                    ))}
+                            </div>
+
                             {/* <div className='mt-5 w-full gap-2'>
                                 <h2 className='font-semibold flex gap-2 items-center'>
                                     <FaListCheck className='text-xl' />

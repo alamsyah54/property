@@ -1,13 +1,15 @@
-import React from "react"
+import { FC } from "react"
 import { FiCheckCircle } from "react-icons/fi"
 import { MdOutlineSell } from "react-icons/md"
 
-const Available = () => {
-    const property = false
+interface availableProps {
+    available: boolean
+}
 
+const Available: FC<availableProps> = ({ available }) => {
     return (
-        <div className='w-fit px-1.5 py-0.5 flex justify-center items-center gap-1 border-[1px] rounded-full border-black cursor-pointer'>
-            {property ? (
+        <div className='w-fit px-1.5 py-0.5 flex justify-center items-center gap-1 border-[1px] rounded-full border-black/5 shadow cursor-pointer'>
+            {available ? (
                 <>
                     <FiCheckCircle className='text-green-600 text-xl' />
                     <p className='text-sm font-semibold'>Available</p>

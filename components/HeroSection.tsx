@@ -22,13 +22,13 @@ export default function HeroSection() {
                         height: "100vh",
                     }}
                 >
-                    <div className='w-full flex justify-between backdrop-blur-sm'>
+                    <div className='w-full flex justify-between'>
                         <div className='justify-center items-start flex flex-col h-full p-7 lg:p-20 md:p-14 sm:p-10'>
                             <h1 className='text-white font-bold font-sarabun py-2 text-4xl lg:text-6xl md:text-5xl sm:text-3xl drop-shadow-lg'>
                                 Discover Exceptional Houses for Sale in Chiang
                                 Mai
                             </h1>
-                            <p className='lg:text-xl md:text-md sm:text-base text-white drop-shadow-lg py-2'>
+                            <p className='lg:text-xl md:text-md sm:text-base text-white drop-shadow-lg py-2 backdrop-blur-sm'>
                                 Brand New Fully-Furnished House with Swimming
                                 Pool, Breathtaking Mountain Views{" "}
                                 <br className='hidden lg:block' /> in Mae Rim,
