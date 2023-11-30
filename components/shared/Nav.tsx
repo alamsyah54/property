@@ -14,14 +14,9 @@ const Nav = () => {
                 <div className='flex items-center justify-between lg:justify-evenly md:justify-evenly '>
                     <Link
                         href='/'
-                        className='flex items-center justify-center text-gray-800 px-5'
+                        className='flex items-center justify-center text-gray-800 px-5 '
                     >
-                        <Image
-                            alt='Siridee'
-                            width={50}
-                            height={50}
-                            src='https://static.wixstatic.com/media/ad9f2a_7ff642de1db54105a51db11f6f6b4356~mv2.jpg/v1/crop/x_67,y_22,w_384,h_387/fill/w_111,h_112,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/LINE_ALBUM_15166_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%91%E0%B9%91%E0%B9%95_0_edited.jpg'
-                        />
+                        <RiBuilding2Fill className='font-bold drop-shadow text-3xl mx-2 text-tertiary' />
                         <span className='font-bold drop-shadow text-xl text-tertiary'>
                             Siridee
                         </span>
