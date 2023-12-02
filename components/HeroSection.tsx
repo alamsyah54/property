@@ -23,7 +23,7 @@ export default function HeroSection() {
                     }}
                 >
                     <div className='w-full flex justify-between'>
-                        <div className='justify-center items-start flex flex-col h-full p-7 lg:p-20 md:p-14 sm:p-10 backdrop-blur-sm'>
+                        <div className='justify-center items-start flex flex-col h-full p-7 lg:p-20 md:p-14 sm:p-10 lg:backdrop-blur-sm'>
                             <h1 className='text-white font-bold font-sarabun py-2 text-4xl lg:text-6xl md:text-5xl sm:text-3xl drop-shadow-lg'>
                                 Discover Exceptional Houses for Sale in Chiang
                                 Mai

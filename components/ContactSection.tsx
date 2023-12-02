@@ -1,7 +1,7 @@
 import Link from "next/link"
 import React from "react"
 import { TiSocialFacebookCircular } from "react-icons/ti"
-import { RiInstagramLine } from "react-icons/ri"
+import { RiInstagramLine, RiMessengerLine } from "react-icons/ri"
 
 const ContactSection = () => {
     return (
@@ -24,7 +24,6 @@ const ContactSection = () => {
                     <div className='flex flex-col md:flex-row lg:flex-row justify-evenly gap-5 md:gap-16 lg:gap-24 py-10 lg:my-20'>
                         <div className='flex gap-3 flex-col text-left w-80 '>
                             <h2 className='text-xl font-semibold'>Address</h2>
-
                             <Link
                                 href='https://maps.app.goo.gl/Pe5BZP7dP1Cp2rc49'
                                 target='_blank'
@@ -57,6 +56,12 @@ const ContactSection = () => {
                                         target='_blank'
                                     >
                                         <RiInstagramLine className='text-2xl' />
+                                    </Link>
+                                    <Link
+                                        href='https://www.facebook.com/messages/t/108694238122198'
+                                        target='_blank'
+                                    >
+                                        <RiMessengerLine className='text-2xl' />
                                     </Link>
                                 </div>
                             </p>
